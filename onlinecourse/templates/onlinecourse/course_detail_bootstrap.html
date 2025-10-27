@@ -95,10 +95,10 @@
         >
           {% for question in course.question_set.all %}
           <div class="card mt-1">
-            <div class="card-header"><h5>{{ question.PROPERTY }}</h5></div>
+            <div class="card-header"><h5>{{ question.content }}</h5></div>
             {% csrf_token %}
             <div class="form-group">
-              {% for ITEM in question.FIELD.all %}
+              {% for choice in question.choice_set.all %}
               <div class="form-check">
                 <label class="form-check-label">
                   <input
